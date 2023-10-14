@@ -24,4 +24,15 @@ class MainTest {
     fun vaiFalhar() {
         fail("Não posso terminar os testes sem este método") //Tem a função de criar um alerta
     }
+
+    @Test
+    fun assumption() {
+        Assumptions.assumeTrue(countXO("xxo"))
+        Assertions.assertTrue(abc()) //Função será executada apenas se a função acima dela retornar retornar verdadeiro
+    }
+
+    @Test
+    fun exception() {
+        assertThrows<NullPointerException> { abc() } //Teste que retorna se a função retornará um erro, deve ser passado como parâmetro o erro esperado
+    }
 }
